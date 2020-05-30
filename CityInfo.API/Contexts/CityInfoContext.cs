@@ -9,6 +9,9 @@ namespace CityInfo.API.Contexts
 {
     public class CityInfoContext : DbContext
     {
+        public DbSet<City> Cities { get; set; }
+        public DbSet<PointOfInterest> PointsOfInterest { get; set; }
+
         public CityInfoContext(DbContextOptions<CityInfoContext> options) : base(options)
         {
             //Database.EnsureCreated();
@@ -86,8 +89,5 @@ namespace CityInfo.API.Contexts
 
             base.OnModelCreating(modelBuilder);
         }
-
-        public DbSet<City> City { get; set; }
-        public DbSet<PointOfInterest> PointsOfInterest { get; set; }
     }
 }
